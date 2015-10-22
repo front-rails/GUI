@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-   "start": "browser-sync start --server 'dist'",
-   "start:dev": "browser-sync start --server --directory --startPath='src/index.html'",
-   "sass": "node-sass src/scss/main.scss dist/css/main.css",
-   "sass:dev": "node-sass src/scss/main.scss src/css/main.css --watch='src/scss/*.scss'",
-   "wiredep": "wiredep --src='src/index.html,src/scss/main.scss'"
+    "start": "browser-sync start --server 'dist'",
+    "start:dev": "browser-sync start --server --directory --startPath='src/index.html'",
+    "sass": "node-sass src/scss/main.scss dist/css/main.css",
+    "sass:dev": "node-sass src/scss/main.scss src/css/main.css --watch='src/scss/*.scss'",
+    "wiredep": "wiredep --src 'src/index.html,src/scss/main.scss'"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,12 @@
   "bugs": {
     "url": "https://github.com/front-rails/GUI/issues"
   },
-  "homepage": "https://github.com/front-rails/GUI#readme"
+  "homepage": "https://github.com/front-rails/GUI#readme",
+  "dependencies": {
+    "bower": "^1.6.3",
+    "browser-sync": "^2.9.11",
+    "gulp": "^3.9.0",
+    "node-sass": "^3.3.3",
+    "wiredep": "^2.2.2"
+  }
 }
