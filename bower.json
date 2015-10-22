@@ -1,0 +1,21 @@
+{
+  "name": "gui",
+  "description": "Front End for Stack Undertow",
+  "main": "index.js",
+  "authors": [
+    "Lacey Rice"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/front-rails/GUI",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
