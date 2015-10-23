@@ -1,0 +1,47 @@
+.login-menu {                   //container for login menu
+  border: 1px solid #f1f1f1;
+  width: 33.33%;
+  margin: 0 auto;
+
+  @extend.clearfix ;
+
+  .login {              //form for login
+    float: left;
+    margin: 10px;
+    display: block;
+
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    .login-submit  {                 //submit button
+      background-color: #4e1bb4;
+      color: #fff;
+      border-radius: 5px;
+      padding: 0 30px;
+      border: none;
+      font-size: 12pt;
+      margin: 20px 0;
+    }
+  } // END OF FORM
+
+
+
+  .redirect-signup {            //div for redirect box
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    float: left;
+    width: 100%;
+    background-color: #fbfbfb;
+
+    #account-query {              //<p>
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+    a {                           //TODO: SPECIFY
+      display: inline-block;
+    }
+  }
+} //END .login-menu

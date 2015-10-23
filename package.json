@@ -6,9 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "browser-sync start --server 'dist'",
-    "start:dev": "browser-sync start --server --directory --startPath='src/index.html'",
-    "sass": "node-sass src/scss/main.scss dist/css/main.css",
-    "sass:dev": "node-sass src/scss/main.scss src/css/main.css --watch='src/scss/*.scss'",
+    "start:dev": "browser-sync start --server --directory --startPath='src/*.html'",
+    "sass": "node-sass --output-style expanded --output src/css/ src/scss/main.scss ",
     "wiredep": "wiredep --src src/index.html --src src/scss/main.scss"
   },
   "repository": {
