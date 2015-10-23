@@ -1,0 +1,9 @@
+{
+  "firebase": "front-rails--gui",
+  "public": "dist",
+  "ignore": [
+    "firebase.json",
+    "**/.*",
+    "**/node_modules/**"
+  ]
+}
