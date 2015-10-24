@@ -16,7 +16,6 @@
 
     </head>
     <body>
-      <main class="container">
         <header>
           <a href="#" class="logo">LOGO!</a>
           <form class="search">
@@ -59,18 +58,45 @@
         </section> <!-- END OF SIGNUP MENU -->
 
         </header><!--header-->
-        <section class="list col-2-3">
-        <h2></h2>
-        <ul>
-          <li>step 1 make it work
+      <main class="container" ng-app="Front-Rails">
 
-          </li>
-        </ul>
+        <section class="list col-2-3">
+
+    <form class="search">
+      <input class="search-bar" placeholder="  search" ng-model="query"></input>
+    </form><!--search bar-->
+  <section class="list col-2-3" ng-controller="questionList">
+    <div class="homepage" ng-class="{active:questions}"> <!--Homepage-->
+      <h2>Top Questions</h2>
+      <ul>
+        <li ng-repeat="question in questions | filter:query">
+          <div>
+            <h3>{{question.votes_quality}}</h3>
+            <p>Votes</p>
+          </div>
+          <h4>{{question.query}}</h4>
+        </li>
+      </ul>
+    </div><!--END homepage-->
+
+    <div class="question" ng-class="{active:answers}"> <!--Question Page-->
+      <h2>{{questions[0].query}}</h2>
+      <p>{{questions[0].description}}<p>
+      <ul ng-controller="answersToAQuestion">
+        <li ng-repeat="answer in answers">
+          <div>
+            <h2>{{answer.votes_quality}}</h2>
+            <p>Votes</p>
+          </div>
+          <p>{{answer.description}}
+        </li>
+      </ul>
+    </div> <!--END Question Page-->
 
         </section> <!-- .list template-->
 
         <!--API TESTING SECTION -->
-        <section class="test" ng-app='Front-Rails'>
+        <section class="test">
           <h3>{{questions.query}}</h3>
         </section>
         <!-- END OF TEST -->
