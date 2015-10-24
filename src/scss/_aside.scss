@@ -1,0 +1,13 @@
+.q-a {
+  background-color: #fbfbfb;
+  @extend .clearfix;
+
+  h3 {
+    color: #4e1bb4;
+    border-bottom: 1px solid #f1f1f1;
+  }
+
+  .q-a-submit {
+    display: block;
+  }
+}
