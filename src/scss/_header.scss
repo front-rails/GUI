@@ -25,11 +25,9 @@ header {
     }
   } //.search
   .login-menu {
-    .login {
-      display: none;
-      &.active {
-        display: block;
-      }
-    } //.login
+    display: none;
+    &.active {
+      display: block;
+    }
   } //.login-menu
 } // header
