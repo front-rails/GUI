@@ -1,0 +1,27 @@
+header {
+  display: block;
+  height: 10ex;
+  border-bottom: 1px solid #f1f1f1;
+  .fa-stack-overflow {
+  position: absolute;
+  top: 1ex;
+  left: 1em;
+  font-size: 2em;
+  color:royalblue;
+}
+  .search {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 1ex;
+    right: 1em;
+    a {
+      display: inline-block;
+      margin-right: 3em;
+      padding: 2ex 2em;
+      text-decoration: none;
+      background-color: #4e1bb4;
+      color: black;
+    }
+  }
+}
