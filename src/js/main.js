@@ -22,3 +22,18 @@
 
 
 })();
+
+
+$('.search a[href]').on('click', function(event){
+  event.preventDefault();
+    $(this).add(this.hash)
+    .addClass('active')
+    .siblings().removeClass('active');
+});
+
+$('.redirect a[href]').on('click', function(event){
+  event.preventDefault();
+    $(this).add(this.hash)
+    .addClass('active')
+    .siblings().removeClass('active');
+});
