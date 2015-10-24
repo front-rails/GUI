@@ -22,3 +22,31 @@
 
 
 })();
+
+/* Signup and Login menu drop down*/
+$('.search a[href]').on('click', function(event){
+  event.preventDefault();
+    $(this).add(this.hash)
+    .toggleClass('active')
+    .siblings().removeClass('active');
+});
+
+$('.redirect a[href]').on('click', function(event){
+  event.preventDefault();
+    $(this).add(this.hash)
+    .toggleClass('active')
+    .siblings().removeClass('active');
+});
+
+$('.list').on('click', function(event){
+  event.preventDefault();
+  console.log("HEY");
+    $('.active').removeClass('active');
+});
+
+$('aside').on('click', function(event){
+  event.preventDefault();
+  console.log("HEY");
+    $('.active').removeClass('active');
+});
+/* Signup and Login menu drop down*/
