@@ -2,13 +2,13 @@ header {
   display: block;
   height: 10ex;
   border-bottom: 1px solid #f1f1f1;
-  .fa-stack-overflow {
+  .logo {
   position: absolute;
   top: 1ex;
   left: 1em;
   font-size: 2em;
   color:royalblue;
-}
+} //.logo
   .search {
     display: block;
     width: auto;
@@ -23,5 +23,13 @@ header {
       background-color: #4e1bb4;
       color: black;
     }
-  }
-}
+  } //.search
+  .login-menu {
+    .login {
+      display: none;
+      &.active {
+        display: block;
+      }
+    } //.login
+  } //.login-menu
+} // header
