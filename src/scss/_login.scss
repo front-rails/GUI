@@ -1,8 +1,10 @@
 .login-menu {                   //container for login menu
   border: 1px solid #f1f1f1;
-  width: 33.33%;
+  width: 18em;
   margin: 0 auto;
-
+  position: absolute;
+  top: 8ex;
+  right: 8em;
   @extend.clearfix ;
 
   .login {              //form for login
