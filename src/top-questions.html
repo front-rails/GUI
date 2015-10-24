@@ -1,0 +1,15 @@
+<div class="homepage"> <!--Homepage-->
+  <h2>Top Questions</h2>
+  <form class="search">
+    <input class="search-bar" placeholder="  search"></input>
+  </form><!--search bar-->
+  <ul>
+    <li ng-repeat="question in questions"> <!-- SEARCH BAR FILTER-->
+      <div >
+        <h3>{{question.votes_quality}}</h3>
+        <p>Votes</p>
+      </div>
+      <h4>{{question.query}}</h4>
+    </li>
+  </ul>
+</div><!--END homepage-->
