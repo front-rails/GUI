@@ -1,0 +1,13 @@
+<div class="question"> <!--Question Page-->
+  <h2>{{questions[0].query}}</h2>
+  <p>{{questions[0].description}}<p>
+  <ul>
+    <li ng-repeat="answer in answers">
+      <div>
+        <h2>{{answer.votes_quality}}</h2>
+        <p>Votes</p>
+      </div>
+      <p>{{answer.description}}
+    </li>
+  </ul>
+</div> <!--END Question Page-->
