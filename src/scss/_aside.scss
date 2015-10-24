@@ -1,13 +1,46 @@
-.q-a {
+.q-a {                          //aside container
   background-color: #fbfbfb;
+  text-align: center;
   @extend .clearfix;
 
   h3 {
     color: #4e1bb4;
     border-bottom: 1px solid #f1f1f1;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-bottom: 20px;
   }
 
-  .q-a-submit {
-    display: block;
-  }
-}
+  .q-a-text {               //div containing text-area
+    padding-bottom: 20%;
+    padding-top: 20%;
+
+
+    .question {       //Question textarea
+      height: 250px;
+      width: 350px;
+      border: 1px solid #f1f1f1;
+      border-radius: 2px;
+    }
+
+    .answer {         //Answer textarea
+      height: 250px;
+      width: 350px;
+      border: 1px solid #f1f1f1;
+      border-radius: 2px;
+
+    }
+    .q-a-submit {         //submit button
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      background-color: #4e1bb4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0 30px;
+      font-size: 12pt;
+
+    }
+  } //END OF DIV
+} //END OF ASIDE
