@@ -7,6 +7,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <!-- bower:css -->
@@ -16,7 +17,6 @@
 
     </head>
     <body>
-      <main class="container">
         <header>
           <a href="#" class="logo">LOGO!</a>
           <form class="search">
@@ -59,32 +59,48 @@
         </section> <!-- END OF SIGNUP MENU -->
 
         </header><!--header-->
-        <section class="list col-2-3">
-        <h2></h2>
-        <ul>
-          <li>step 1 make it work
-
-          </li>
-        </ul>
-
-        </section> <!-- .list template-->
-
-        <!--API TESTING SECTION -->
-        <section class="test" ng-app='Front-Rails'>
-          <h3>{{questions.query}}</h3>
-        </section>
-        <!-- END OF TEST -->
-
-        <aside class="q-a col-1-3">
-          <form>
-            <h3>Question</h3>
-            <textarea></textarea>
-            <button class="q-a-submit">Submit</button>
-
-          </form>
-
-        </aside>
-
+      <main class="container" ng-app="Front-Rails">
+          <section class="list col-2-3" ng-controller="questionList">
+            <div class="homepage" ng-class="{active:questions}"> <!--Homepage-->
+              <h2>Top Questions</h2>
+              <form class="search">
+                <input class="search-bar" placeholder="  search" ng-model="query"></input>
+              </form><!--search bar-->
+              <ul>
+                <li ng-repeat="question in questions | filter:query">
+                  <div>
+                    <h3>{{question.votes_quality}}</h3>
+                    <p>Votes</p>
+                  </div>
+                  <h4>{{question.query}}</h4>
+                </li>
+              </ul>
+            </div><!--END homepage-->
+            <div class="question" ng-class="{active:answers}"> <!--Question Page-->
+              <h2>{{questions[0].query}}</h2>
+              <p>{{questions[0].description}}<p>
+              <ul ng-controller="answersToAQuestion">
+                <li ng-repeat="answer in answers">
+                  <div>
+                    <h2>{{answer.votes_quality}}</h2>
+                    <p>Votes</p>
+                  </div>
+                  <p>{{answer.description}}
+                </li>
+              </ul>
+            </div> <!--END Question Page-->
+          </section> <!-- .list template-->
+    <aside class="q-a col-1-3">
+         <form>
+           <!-- <h3 class="question">Questions</h3> -->
+           <h3 class="answer">Answer</h3>
+           <div class="q-a-text">
+             <!-- <textarea class="question" placeholder="Write your question here"></textarea> -->
+             <textarea class="answer" placeholder="Write your answer here"></textarea>
+             <button class="q-a-submit">Submit</button>
+           </div>
+         </form>
+       </aside> <!--END OF QA MENU-->
       </main> <!-- .container-->
 
         <!-- bower:js -->
