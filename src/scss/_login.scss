@@ -1,6 +1,6 @@
 .menu {                   //container for login menu
   border: 1px solid #f1f1f1;
-  width: 33.33%;
+  width: 33.33%;              //TODO: Change width with grid.scss 
   margin: 0 auto;
 
   @extend.clearfix ;
