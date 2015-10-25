@@ -12,28 +12,71 @@
       redirectTo: "top-questions"
     })
     .when('/top-questions', {
-      templateUrl: 'top-questions.html'
+      templateUrl: 'top-questions.html',
+      // controller: 'questionList'
+
     })
 
     .when('/question', {
-      templateUrl: 'question.html'
+      templateUrl: 'question.html',
+      // controller: 'questionPage'
+
     })
 })
-.run(function($http, $rootScope) {
+
+// .controller('mainController', function($scope, $route, $routeParams, $location){
+//   $scope.$route = $route;
+//   $scope.$location = $location;
+//   $scope.$routeParams = $routeParams;
+// })
+
+.controller('questionList', function($scope, $routeParams, $http){  //CONTROLLER FOR POPULATING TOP QUESTIONS
   $http.get('https://stackundertow.herokuapp.com/questions')
     .then(function(response){
-      // $rootScope.query = response.data.query;
-
-      //  $rootScope.questions = response.data;
-
-      $rootScope.questions = response.data;
+      $scope.questions = response.data;
     })
-});
+  })
 
-// angular.module('Front-Rails')
-//   .config(function($routeProvider){
-//     $routeProvider
-//   });
+.controller('loginCtrl', function($scope, $http){        //CONTROLLER FOR LOGIN
+    this.login = {
+      email: "",
+      password: "",
+    };
+    $scope.submit= function(){
+      $http.post('https://stackundertow.herokuapp.com/sessions')
+      this.login = {};
+    }
+  })
+
+  .controller('signupCtrl', function($scope, $http){        //CONTROLLER FOR SIGNUP
+      this.signup = {
+        displayName: "",
+        email: "",
+        password: "",
+      };
+      $scope.submit= function(){
+        $http.post('https://stackundertow.herokuapp.com/users')
+        this.signup = {};
+      }
+
+    })
+
+
+
+  // .controller('questionPage', function($http, $scope){
+  //   $http.get('http://stackundertow.herokuapp.com/question')
+  //     .then(function(response){
+  //       $scope.questions = response.data;
+  //     })
+  // })
+
+
+// .run(function($http, $rootScope) {
+//   $http.get('https://stackundertow.herokuapp.com/questions')
+//     .then(function(response){
+//       $rootScope.questions = response.data;
+//     })
+// }); //END OF .run
 
 })(); //END OF IFFE
 
@@ -183,13 +226,11 @@ $('.redirect a[href]').on('click', function(event){
 
 $('.list').on('click', function(event){
   event.preventDefault();
-  console.log("HEY");
     $('.active').removeClass('active');
 });
 
 $('aside').on('click', function(event){
   event.preventDefault();
-  console.log("HEY");
     $('.active').removeClass('active');
 });
 /* Signup and Login menu drop down*/
