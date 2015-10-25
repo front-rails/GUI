@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+        <link rel="`le-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
         <!-- bower:css -->
         <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
@@ -16,10 +16,10 @@
         <link rel="stylesheet" href="css/main.css">
 
     </head>
-    <body>
+    <body  ng-app="Front-Rails">
         <header>
           <a href="#/question">HERE</a>
-          <a href="#" class="logo">LOGO!</a>
+          <a href="#/" class="logo">LOGO!</a>
           <form class="search">
           <a href="#signup">Sign-Up</a>
           <a href="#login">Login</a>
@@ -31,9 +31,9 @@
         <section id="login" class="menu login"> <!-- LOGIN MENU CONTAINER -->
           <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
             <h4>Email</h4>
-            <input ng-model="loginCtrl.users.email" type="email" placeholder="you@email.com"></input>
+            <input ng-model="user.email" type="email" placeholder="you@email.com"></input>
             <h4>Password</h4>
-            <input ng-model="loginCtrl.users.password" type="password" placeholder="****"></input>
+            <input ng-model="user.password" type="password" placeholder="****"></input>
             <button class="submit">Log in</button>
           </form>
           <div class="redirect">
@@ -44,14 +44,14 @@
 
         <!-- SIGNUP MENU -->
         <section id="signup" class="menu signup"> <!-- LOGIN MENU CONTAINER -->
-          <form class="login-signup" ng-controller="signupCtrl" ng-submit="submit()">
+          <form class="login-signup" ng-controller="SignupController" ng-submit="submit()">
             <h4>Display Name</h4>
-            <input type="name" placeholder="Bruce Banner"></input>
+            <input type="name" placeholder="Bruce Banner" ng-model="user.name"></input>
             <h4>Email</h4>
-            <input type="email" placeholder="you@email.com"></input>
+            <input type="email" placeholder="you@email.com" ng-model="user.email"></input>
             <h4>Password</h4>
-            <input type="password" placeholder="****"></input>
-            <button class="submit">signup</button>
+            <input type="password" placeholder="****" ng-model="user.password"></input>
+            <button class="submit" type="submit">SignUp</button>
           </form>
           <div class="redirect">
             <p class="account-query">Already have an account?</p>
@@ -60,7 +60,7 @@
         </section> <!-- END OF SIGNUP MENU -->
         <!-- <a href="#question">HERE</a> -->
         </header><!--header-->
-      <main class="container" ng-app="Front-Rails">
+      <main class="container">
           <section class="list col-2-3" ng-controller="questionList">
             <ng-view />
 

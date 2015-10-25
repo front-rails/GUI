@@ -30,6 +30,22 @@
 //   $scope.$routeParams = $routeParams;
 // })
 
+
+  // .controller('signupCtrl', function($scope, $http){        //CONTROLLER FOR SIGNUP
+  //     this.signup = {
+  //       displayName: "",
+  //       email: "",
+  //       password: "",
+  //     };
+  //     $scope.submit= function(){
+  //       $http.post('https://stackundertow.herokuapp.com/users')
+  //       this.signup = {};
+  //     }
+  //
+  //   })
+
+
+
 .controller('questionList', function($scope, $routeParams, $http){  //CONTROLLER FOR POPULATING TOP QUESTIONS
   $http.get('https://stackundertow.herokuapp.com/questions')
     .then(function(response){
@@ -37,29 +53,31 @@
     })
   })
 
+.controller("SignupController", function($scope, $http){
+  $scope.user = {
+    name: '',
+    email: '',
+    password: ''
+  }
+  $scope.submit = function() {
+    console.log($scope.user);
+    $http.post('https://stackundertow.herokuapp.com/user', $scope.user);
+  };
+})
+
+
 .controller('loginCtrl', function($scope, $http){        //CONTROLLER FOR LOGIN
-    this.login = {
+    $scope.user = {
       email: "",
       password: "",
     };
     $scope.submit= function(){
-      $http.post('https://stackundertow.herokuapp.com/sessions')
-      this.login = {};
+      $http.post('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      // this.login = {};
     }
   })
 
-  .controller('signupCtrl', function($scope, $http){        //CONTROLLER FOR SIGNUP
-      this.signup = {
-        displayName: "",
-        email: "",
-        password: "",
-      };
-      $scope.submit= function(){
-        $http.post('https://stackundertow.herokuapp.com/users')
-        this.signup = {};
-      }
 
-    })
 
 
 
