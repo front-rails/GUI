@@ -30,36 +30,64 @@
 //   $scope.$routeParams = $routeParams;
 // })
 
+
+  // .controller('signupCtrl', function($scope, $http){        //CONTROLLER FOR SIGNUP
+  //     this.signup = {
+  //       displayName: "",
+  //       email: "",
+  //       password: "",
+  //     };
+  //     $scope.submit= function(){
+  //       $http.post('https://stackundertow.herokuapp.com/users')
+  //       this.signup = {};
+  //     }
+  //
+  //   })
+
+
+
 .controller('questionList', function($scope, $routeParams, $http){  //CONTROLLER FOR POPULATING TOP QUESTIONS
   $http.get('https://stackundertow.herokuapp.com/questions')
     .then(function(response){
       $scope.questions = response.data;
     })
-  })
+  })//CONTROLLER FOR POPULATING TOP QUESTIONS
 
-.controller('loginCtrl', function($scope, $http){        //CONTROLLER FOR LOGIN
-    this.login = {
-      email: "",
-      password: "",
-    };
-    $scope.submit= function(){
-      $http.post('https://stackundertow.herokuapp.com/sessions')
-      this.login = {};
+.controller("SignupController", function($scope, $http){ //CONTROLLER FOR SIGNUP
+  $scope.user = {
+    name: '',
+    email: '',
+    password: ''
+  }
+  $scope.submit = function() {
+    $http.post('https://stackundertow.herokuapp.com/users', $scope.user);
+  };
+})//CONTROLLER FOR SIGNUP
+
+
+.controller('loginCtrl', function($scope, $http){//CONTROLLER FOR LOGIN
+    $scope.user = {
+      email: '',
+      password: '',
     }
-  })
+    $scope.submit= function(){
+      $http.post('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      console.log($scope.user);
+      // this.login = {};
+    }
+  })//CONTROLLER FOR LOGIN
 
-  .controller('signupCtrl', function($scope, $http){        //CONTROLLER FOR SIGNUP
-      this.signup = {
-        displayName: "",
-        email: "",
-        password: "",
-      };
-      $scope.submit= function(){
-        $http.post('https://stackundertow.herokuapp.com/users')
-        this.signup = {};
-      }
-
-    })
+.controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
+    $scope.user = {
+      email: '',
+      password: '',
+    }
+    $scope.submit= function(){
+      $http.delete('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      console.log($scope.user);
+      // this.login = {};
+    }
+  })//CONTROLLER FOR LOGOUT
 
 
 
