@@ -7,10 +7,15 @@ ul {
 .homepage {
   h2 {
     text-align:center;
+    color:#4e1bb4;
+    font-weight: bold;
+    vertical-align: middle;
+
   }
   li {
-    border-top:1px solid black;
+    border-top:1px solid #f1f1f1;
     height: 15ex;
+    color: #717072;
     div {
       width:20%;
       float: left;
@@ -23,7 +28,7 @@ ul {
 } //.homepage
   .question {
     li {
-      border-top:1px solid black;
+      border-top:1px solid #f1f1f1;
       height: 20ex;
       width:100%;
       div {
@@ -35,6 +40,7 @@ ul {
           width:90%;
           margin: 0 5%;
           float: left;
+          color:#4e1bb4;
         }
         p {
           width: auto;
