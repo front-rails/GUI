@@ -18,6 +18,7 @@
     </head>
     <body>
         <header>
+          <a href="#/question">HERE</a>
           <a href="#" class="logo">LOGO!</a>
           <form class="search">
           <a href="#signup">Sign-Up</a>
@@ -28,11 +29,11 @@
 
         <!-- LOGIN MENU -->
         <section id="login" class="menu login"> <!-- LOGIN MENU CONTAINER -->
-          <form class="login-signup">
+          <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
             <h4>Email</h4>
-            <input type="email" placeholder="you@email.com"></input>
+            <input ng-model="loginCtrl.users.email" type="email" placeholder="you@email.com"></input>
             <h4>Password</h4>
-            <input type="password" placeholder="****"></input>
+            <input ng-model="loginCtrl.users.password" type="password" placeholder="****"></input>
             <button class="submit">Log in</button>
           </form>
           <div class="redirect">
@@ -43,7 +44,7 @@
 
         <!-- SIGNUP MENU -->
         <section id="signup" class="menu signup"> <!-- LOGIN MENU CONTAINER -->
-          <form class="login-signup">
+          <form class="login-signup" ng-controller="signupCtrl" ng-submit="submit()">
             <h4>Display Name</h4>
             <input type="name" placeholder="Bruce Banner"></input>
             <h4>Email</h4>
@@ -57,38 +58,13 @@
             <a href="#login">Log in</a>         <!--TODO: CONNECT HREF TO SIGN UP HTML -->
           </div>
         </section> <!-- END OF SIGNUP MENU -->
-
+        <!-- <a href="#question">HERE</a> -->
         </header><!--header-->
       <main class="container" ng-app="Front-Rails">
           <section class="list col-2-3" ng-controller="questionList">
-            <div class="homepage" ng-class="{active:questions}"> <!--Homepage-->
-              <h2>Top Questions</h2>
-              <form class="search">
-                <input class="search-bar" placeholder="  search" ng-model="query"></input>
-              </form><!--search bar-->
-              <ul>
-                <li ng-repeat="question in questions | filter:query">
-                  <div>
-                    <h3>{{question.votes_quality}}</h3>
-                    <p>Votes</p>
-                  </div>
-                  <h4>{{question.query}}</h4>
-                </li>
-              </ul>
-            </div><!--END homepage-->
-            <div class="question" ng-class="{active:answers}"> <!--Question Page-->
-              <h2>{{questions[0].query}}</h2>
-              <p>{{questions[0].description}}<p>
-              <ul ng-controller="answersToAQuestion">
-                <li ng-repeat="answer in answers">
-                  <div>
-                    <h2>{{answer.votes_quality}}</h2>
-                    <p>Votes</p>
-                  </div>
-                  <p>{{answer.description}}
-                </li>
-              </ul>
-            </div> <!--END Question Page-->
+            <ng-view />
+
+
           </section> <!-- .list template-->
     <aside class="q-a col-1-3">
          <form>
@@ -106,9 +82,11 @@
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
         <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-route/angular-route.js"></script>
         <!-- endbower -->
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
 
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       <script>
