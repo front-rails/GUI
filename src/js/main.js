@@ -77,17 +77,17 @@
     }
   })//CONTROLLER FOR LOGIN
 
-// .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
-//     $scope.user = {
-//       email: '',
-//       password: '',
-//     }
-//     $scope.submit= function(){
-//       $http.delete('https://stackundertow.herokuapp.com/sessions', $scope.user)
-//       console.log($scope.user);
-//       // this.login = {};
-//     }
-//   })//CONTROLLER FOR LOGOUT
+.controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
+    $scope.user = {
+      email: '',
+      password: '',
+    }
+    $scope.submit= function(){
+      $http.delete('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      console.log($scope.user);
+      // this.login = {};
+    }
+  })//CONTROLLER FOR LOGOUT
 
 
 
@@ -238,7 +238,7 @@
 
 
 /* Signup and Login menu drop down*/
-$('.search a[href]').on('click', function(event){
+$('.user-buttons a[href]').on('click', function(event){
   event.preventDefault();
     $(this).add(this.hash)
     .toggleClass('active')
