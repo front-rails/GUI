@@ -51,33 +51,43 @@
     .then(function(response){
       $scope.questions = response.data;
     })
-  })
+  })//CONTROLLER FOR POPULATING TOP QUESTIONS
 
-.controller("SignupController", function($scope, $http){
+.controller("SignupController", function($scope, $http){ //CONTROLLER FOR SIGNUP
   $scope.user = {
     name: '',
     email: '',
     password: ''
   }
   $scope.submit = function() {
-    console.log($scope.user);
     $http.post('https://stackundertow.herokuapp.com/users', $scope.user);
   };
-})
+})//CONTROLLER FOR SIGNUP
 
 
-.controller('loginCtrl', function($scope, $http){        //CONTROLLER FOR LOGIN
+.controller('loginCtrl', function($scope, $http){//CONTROLLER FOR LOGIN
     $scope.user = {
-      email: "",
-      password: "",
-    };
+      email: '',
+      password: '',
+    }
     $scope.submit= function(){
       $http.post('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      console.log($scope.user);
       // this.login = {};
     }
-  })
+  })//CONTROLLER FOR LOGIN
 
-
+.controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
+    $scope.user = {
+      email: '',
+      password: '',
+    }
+    $scope.submit= function(){
+      $http.delete('https://stackundertow.herokuapp.com/sessions', $scope.user)
+      console.log($scope.user);
+      // this.login = {};
+    }
+  })//CONTROLLER FOR LOGOUT
 
 
 
