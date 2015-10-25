@@ -61,7 +61,7 @@
   }
   $scope.submit = function() {
     console.log($scope.user);
-    $http.post('https://stackundertow.herokuapp.com/user', $scope.user);
+    $http.post('https://stackundertow.herokuapp.com/users', $scope.user);
   };
 })
 
