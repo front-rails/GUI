@@ -17,33 +17,30 @@
 
     </head>
     <body  ng-app="Front-Rails">
-        <header>
-          <a href="#/question">HERE</a>
-          <a href="#/" class="logo">LOGO!</a>
-          <form class="search">
+      <header>
+        <a href="#/question">HERE</a>
+        <a href="#/" class="logo">LOGO!</a>
+        <form class="search">
           <a href="#signup">Sign-Up</a>
           <a href="#login">Login</a>
-            <input class="search-bar" placeholder="  search"></input>
-            <button>Submit</button>
-          </form><!--search bar-->
-
-        <!-- LOGIN MENU -->
-        <section id="login" class="menu login"> <!-- LOGIN MENU CONTAINER -->
+          <a href="#logout" ng-controller="LogoutCtrl" ng-submit="submit()">Logout</a>
+          <input class="search-bar" placeholder="  search"></input>
+          <button>Submit</button>
+        </form><!--search bar-->
+        <section id="login" class="menu login"> <!-- LOGIN MENU -->
           <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
             <h4>Email</h4>
             <input ng-model="user.email" type="email" placeholder="you@email.com"></input>
             <h4>Password</h4>
             <input ng-model="user.password" type="password" placeholder="****"></input>
-            <button class="submit">Log in</button>
+            <button class="submit" type="submit">Log in</button>
           </form>
           <div class="redirect">
             <p class="account-query">Don't have an account?</p>
-            <a href="#signup">Sign up</a>         <!--TODO: CONNECT HREF TO SIGN UP HTML -->
+            <a href="#signup">Sign up</a>
           </div>
         </section> <!-- END OF LOGIN MENU -->
-
-        <!-- SIGNUP MENU -->
-        <section id="signup" class="menu signup"> <!-- LOGIN MENU CONTAINER -->
+        <section id="signup" class="menu signup"> <!-- SIGNUP MENU -->
           <form class="login-signup" ng-controller="SignupController" ng-submit="submit()">
             <h4>Display Name</h4>
             <input type="name" placeholder="Bruce Banner" ng-model="user.name"></input>
@@ -55,11 +52,11 @@
           </form>
           <div class="redirect">
             <p class="account-query">Already have an account?</p>
-            <a href="#login">Log in</a>         <!--TODO: CONNECT HREF TO SIGN UP HTML -->
+            <a href="#login">Log in</a>
           </div>
         </section> <!-- END OF SIGNUP MENU -->
         <!-- <a href="#question">HERE</a> -->
-        </header><!--header-->
+      </header><!--END header-->
       <main class="container">
           <section class="list col-2-3" ng-controller="questionList">
             <ng-view />
