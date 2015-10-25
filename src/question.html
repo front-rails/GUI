@@ -2,12 +2,16 @@
   <h2>{{questions[0].query}}</h2>
   <p>{{questions[0].description}}<p>
   <ul>
-    <li ng-repeat="answer in answers">
+    <li>
       <div>
-        <h2>{{answer.votes_quality}}</h2>
+        <h2>{{questions[0].answers[0].votes_quality}}</h2>
+        <h2>{{questions[0].answers[1].votes_quality}}</h2>
+        <h2>{{questions[0].answers[2].votes_quality}}</h2>
         <p>Votes</p>
       </div>
-      <p>{{answer.description}}
+      <p>{{questions[0].answers[0].description}}</p>
+      <p>{{questions[0].answers[1].description}}</p>
+      <p>{{questions[0].answers[2].description}}</p>
     </li>
   </ul>
 </div> <!--END Question Page-->
