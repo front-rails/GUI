@@ -2,18 +2,23 @@ header {
   display: block;
   height: 10ex;
   border-bottom: 1px solid #f1f1f1;
+  background-color: #fbfbfb;
   .logo {
   position: absolute;
   top: 1ex;
   left: 1em;
   font-size: 2em;
-  color:royalblue;
+  color:#4e1bb4;
+  text-decoration: none;
+  font-weight: bold;
 
-  // a::before{
-  //   content: "\f16c";
-  // }
+  span::before{
+    content: "\f16c";
+    font-family: FontAwesome;
+    color: #4e1bb4;
+  }
 } //.logo
-  .search {
+  .user-buttons {
     display: block;
     width: auto;
     position: absolute;
