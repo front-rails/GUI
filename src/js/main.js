@@ -69,7 +69,7 @@
       console.log($scope.user);
       // this.login = {};
     }
-  })//CONTROLLER FOR LOGOUT
+  // })//CONTROLLER FOR LOGOUT
 
   .controller('questionList', function($scope, $routeParams, $http){  //CONTROLLER FOR POPULATING TOP QUESTIONS
     $http.get('https://stackundertow.herokuapp.com/questions')
