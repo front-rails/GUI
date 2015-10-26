@@ -10,6 +10,8 @@
         <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="`le-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+
         <!-- bower:css -->
         <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" />
         <!-- endbower -->
@@ -18,15 +20,14 @@
     </head>
     <body  ng-app="Front-Rails">
       <header>
-        <a href="#/question">HERE</a>
-        <a href="#/" class="logo">LOGO!</a>
-        <form class="search">
+        <!-- <a href="#/question">HERE</a> -->
+        <a href="#/" class="logo"><span>Stack Undertow</span></a>
+        <div class="user-buttons">
           <a href="#signup">Sign-Up</a>
           <a href="#login">Login</a>
           <!-- <a href="#logout" ng-controller="LogoutCtrl" ng-submit="submit()">Logout</a> -->
-          <input class="search-bar" placeholder="  search"></input>
-          <button>Submit</button>
-        </form><!--search bar-->
+
+        </div><!--search bar-->
         <section id="login" class="menu login"> <!-- LOGIN MENU -->
           <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
             <h4>Email</h4>
