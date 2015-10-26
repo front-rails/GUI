@@ -59,33 +59,28 @@
         <!-- <a href="#question">HERE</a> -->
       </header><!--END header-->
       <main class="container">
-          <section class="list col-2-3" ng-controller="questionList">
-            <ng-view />
-
-
-          </section> <!-- .list template-->
-    <aside class="q-a col-1-3">
-         <form>
+        <section class="list col-2-3" ng-controller="questionList">
+          <ng-view />
+        </section> <!-- .list template-->
+        <aside class="q-a col-1-3">
+         <form ng-controller="OfferAnswer" ng-submit="submit()">
            <!-- <h3 class="question">Questions</h3> -->
            <h3 class="answer">Answer</h3>
-           <div class="q-a-text">
+           <div class="q-a-text" >
              <!-- <textarea class="question" placeholder="Write your question here"></textarea> -->
-             <textarea class="answer" placeholder="   Write your answer here..."></textarea>
-             <button class="q-a-submit">Submit</button>
+             <textarea class="answer" placeholder="   Write your answer here..." ng-model="answer.description"></textarea>
+             <button class="q-a-submit" type="submit">Submit</button>
            </div>
          </form>
        </aside> <!--END OF QA MENU-->
       </main> <!-- .container-->
-
-        <!-- bower:js -->
-        <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../bower_components/angular/angular.js"></script>
-        <script src="../bower_components/angular-route/angular-route.js"></script>
-        <!-- endbower -->
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-
+      <!-- bower:js -->
+      <script src="../bower_components/jquery/dist/jquery.js"></script>
+      <script src="../bower_components/angular/angular.js"></script>
+      <script src="../bower_components/angular-route/angular-route.js"></script>
+      <!-- endbower -->
+      <script src="js/plugins.js"></script>
+      <script src="js/main.js"></script>
       <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
       <script>
           (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
