@@ -2,6 +2,8 @@
   background-color: #fbfbfb;
   text-align: center;
   @extend .clearfix;
+  position: fixed;
+  right: 0;
 
   h3 {
     color: #4e1bb4;
