@@ -37,6 +37,15 @@
     };
   })//CONTROLLER FOR SIGNUP
 
+  .controller("OfferAnswer", function($scope, $http){ //CONTROLLER FOR submitting answer
+    $scope.answers =     {user_id: 6, question_id: 1, description: "This is my answer from user 6 to question 1, right?"
+    }
+    $scope.submit = function() {
+      $http.post('https://stackundertow.herokuapp.com/answers', $scope.answers);
+      console.log($scope.answers);
+    };
+  })//CONTROLLER FOR submitting answer
+
   .controller('loginCtrl', function($scope, $http){//CONTROLLER FOR LOGIN
     $scope.user = {
       email: '',
@@ -48,6 +57,14 @@
       // this.login = {};
     }
   })//CONTROLLER FOR LOGIN
+
+  .controller('questionList', function($scope, $routeParams, $http){  //CONTROLLER FOR POPULATING TOP QUESTIONS
+    $http.get('https://stackundertow.herokuapp.com/questions')
+      .then(function(response){
+        $scope.questions = response.data;
+      })
+  })//CONTROLLER FOR POPULATING TOP QUESTIONS
+
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {

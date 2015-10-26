@@ -62,13 +62,13 @@
           <ng-view />
         </section> <!-- .list template-->
         <aside class="q-a col-1-3">
-         <form>
+         <form ng-controller="OfferAnswer" ng-submit="submit()">
            <!-- <h3 class="question">Questions</h3> -->
            <h3 class="answer">Answer</h3>
-           <div class="q-a-text">
+           <div class="q-a-text" >
              <!-- <textarea class="question" placeholder="Write your question here"></textarea> -->
-             <textarea class="answer" placeholder="   Write your answer here..."></textarea>
-             <button class="q-a-submit">Submit</button>
+             <textarea class="answer" placeholder="   Write your answer here..." ng-model="answer.description"></textarea>
+             <button class="q-a-submit" type="submit">Submit</button>
            </div>
          </form>
        </aside> <!--END OF QA MENU-->
