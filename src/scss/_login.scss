@@ -4,8 +4,10 @@
   margin: 0 auto;
   position: absolute;
   top: 10ex;
-  right: 19em;
+  right: 4em;
   @extend.clearfix ;
+  background-color: #fbfbfb;
+  
 
   .login-signup {              //FORM BODY
     float: left;
