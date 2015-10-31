@@ -1,0 +1,13 @@
+<div class="question"  ng-controller="OfferAnswer" > <!--Question Page-->
+  <h2>{{questions[3].query}}</h2>
+  <p>{{questions[3].description}}<p>
+  <ul>
+    <li ng-repeat="answer in questions[3].answers">
+      <div>
+        <h2>{{answer.votes_quality}}</h2>
+        <p>Votes</p>
+      </div>
+      <p>{{answer.description}}</p>
+    </li>
+  </ul>
+</div> <!--END Question Page-->

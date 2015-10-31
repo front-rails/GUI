@@ -96,16 +96,23 @@ textarea {
    ========================================================================== */
 
 //bower:scss
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import '../../bower_components/font-awesome/scss/font-awesome.scss';
 //endbower
+@import 'login';
+@import 'grid';
+@import "aside";
+@import 'header';
+@import 'template';
 
 
 
 
-
-
-
-
+.container {
+  box-sizing: border-box;
+  width: 90%;
+  margin: 0 5%;
+  font-family: Lato, Aria, sans-serif;
+}
 
 
 
