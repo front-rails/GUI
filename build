@@ -4,8 +4,9 @@ rm -rf dist/*
 
 echo 'Step 1: Copy all the HTML'
 cp src/index.html dist/
+cp src/top-questions.html dist/
 mkdir dist/partials/
-# cp -r src/partials dist/
+cp -r src/partials dist/
 
 echo 'Step 2: Build all the Sass into CSS!'
 npm run sass
@@ -16,8 +17,22 @@ mkdir -p dist/js && cp -r src/js dist/
 echo 'Step 4: Copy all the `bower_components/`!'
 
 echo 'Step 4a: Normalize the CSS...'
+mkdir -p dist/css/
+cp src/css/main.css dist/css/main.css
+
 mkdir -p dist/bower_components/normalize-css/
 cp bower_components/normalize-css/normalize.css dist/bower_components/normalize-css/normalize.css
+
+mkdir -p dist/bower_components/font-awesome/css
+cp bower_components/font-awesome/css/font-awesome.min.css dist/bower_components/font-awesome/css/font-awesome.min.css
+
+mkdir -p dist/bower_components/font-awesome/fonts
+cp bower_components/font-awesome/fonts/fontawesome-webfont.woff dist/bower_components/font-awesome/fonts/fontawesome-webfont.woff
+
+cp bower_components/font-awesome/fonts/fontawesome-webfont.woff2 dist/bower_components/font-awesome/fonts/fontawesome-webfont.woff2
+
+cp bower_components/font-awesome/fonts/fontawesome-webfont.ttf dist/bower_components/font-awesome/fonts/fontawesome-webfont.ttf
+
 
 
 mkdir -p dist/bower_components/jquery/dist/
@@ -26,4 +41,4 @@ cp bower_components/jquery/dist/jquery.js dist/bower_components/jquery/dist/jque
 mkdir -p dist/bower_components/angular/
 cp bower_components/angular/angular.js dist/bower_components/angular/angular.js
 
-npm start
+npm run start-dev
