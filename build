@@ -41,4 +41,7 @@ cp bower_components/jquery/dist/jquery.js dist/bower_components/jquery/dist/jque
 mkdir -p dist/bower_components/angular/
 cp bower_components/angular/angular.js dist/bower_components/angular/angular.js
 
+mkdir -p dist/bower_components/angular-route/
+cp bower_components/angular-route/angular-route.js dist/bower_components/angular-route/angular-route.js
+
 npm run start-dev
