@@ -6,11 +6,11 @@
       redirectTo: "top-questions"
     })
     .when('/top-questions', {
-      templateUrl: 'top-questions.html',  // controller: 'questionList'
+      templateUrl: 'partials/top-questions.html',  // controller: 'questionList'
     })
 
     .when('/question', {
-      templateUrl: 'question.html',  // controller: 'questionPage'
+      templateUrl: 'partials/question.html',  // controller: 'questionPage'
     })
   }) //END $routeProvider
 
@@ -58,7 +58,14 @@
     }
   })//CONTROLLER FOR LOGIN
 
-
+  // .controller("submitQuestion", function($scope, $http){ //CONTROLLER FOR submitting answer
+  //   $scope.question =     {user_id: 6, question_id: 1, description: "This is a new question"
+  //   }
+  //   $scope.submit = function() {
+  //     $http.post('https://stackundertow.herokuapp.com/question', $scope.answers);
+  //     console.log($scope.answers);
+  //   };
+  // })//CONTROLLER FOR submitting questions
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {
