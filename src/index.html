@@ -62,17 +62,6 @@
         <section class="list col-2-3" ng-controller="questionList">
           <ng-view />
         </section> <!-- .list template-->
-        <aside class="q-a col-1-3">
-         <form ng-controller="OfferAnswer" ng-submit="submit()">
-           <!-- <h3 class="question">Questions</h3> -->
-           <h3 class="answer">Answer</h3>
-           <div class="q-a-text" >
-             <!-- <textarea class="question" placeholder="Write your question here"></textarea> -->
-             <textarea class="answer" placeholder="   Write your answer here..." ng-model="answer.description"></textarea>
-             <button class="q-a-submit" type="submit">Submit</button>
-           </div>
-         </form>
-       </aside> <!--END OF QA MENU-->
       </main> <!-- .container-->
       <!-- bower:js -->
       <script src="/bower_components/jquery/dist/jquery.js"></script>
