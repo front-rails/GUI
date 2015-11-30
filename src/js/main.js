@@ -55,7 +55,6 @@
   })//CONTROLLER FOR submitting question
 
   .controller("OfferAnswer", function($scope, $http, $routeParams, $rootScope){ //CONTROLLER FOR submitting answer
-      console.log($routeParams);
       var id = $routeParams.id;
       var username = $routeParams.username;
       $scope.username = $routeParams.username;
