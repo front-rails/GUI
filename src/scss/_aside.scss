@@ -2,7 +2,8 @@
   background-color: #fbfbfb;
   text-align: center;
   @extend .clearfix;
-float: right;
+  float: right;
+  margin-right: -5%;
 
   h3 {
     color: #4e1bb4;
