@@ -37,35 +37,43 @@
     };
   })//CONTROLLER FOR SIGNUP
 
+  .controller("questionAsker", function($scope, $http){ //CONTROLLER FOR submitting answer
+    $scope.question = {
+      description: ''
+    }
+    $scope.submitQuestion = function() {
+      $http.post('https://stackundertow.herokuapp.com/questions', $scope.question)
+        .then(function(){
+          $scope.question = {
+            description: ''
+          }
+        })
+    };
+  })//CONTROLLER FOR submitting question
+
   .controller("OfferAnswer", function($scope, $http){ //CONTROLLER FOR submitting answer
     $scope.answers =     {user_id: 6, question_id: 1, description: "This is my answer from user 6 to question 1, right?"
     }
     $scope.submit = function() {
       $http.post('https://stackundertow.herokuapp.com/answers', $scope.answers);
-      console.log($scope.answers);
     };
   })//CONTROLLER FOR submitting answer
 
   .controller('loginCtrl', function($scope, $http){//CONTROLLER FOR LOGIN
     $scope.user = {
       email: '',
-      password: '',
+      password: ''
     }
     $scope.submit= function(){
       $http.post('https://stackundertow.herokuapp.com/sessions', $scope.user)
-      console.log($scope.user);
-      // this.login = {};
+      .then (function() {
+        $scope.user = {
+          email: '',
+          password: ''
+        }
+      })
     }
   })//CONTROLLER FOR LOGIN
-
-  // .controller("submitQuestion", function($scope, $http){ //CONTROLLER FOR submitting answer
-  //   $scope.question =     {user_id: 6, question_id: 1, description: "This is a new question"
-  //   }
-  //   $scope.submit = function() {
-  //     $http.post('https://stackundertow.herokuapp.com/question', $scope.answers);
-  //     console.log($scope.answers);
-  //   };
-  // })//CONTROLLER FOR submitting questions
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {
@@ -83,19 +91,20 @@
 })(); //END OF IFFE
 
 
-
-
 /* Signup and Login menu drop down*/
 
 
 ;(function(){
-
 
   $('.user-buttons a[href]').on('click', function(event){
     event.preventDefault();
       $(this).add(this.hash)
       .toggleClass('active')
       .siblings().removeClass('active');
+  });
+
+  $('.submit').on('click', function(){
+    $('#login').removeClass('active');
   });
 
   $('.redirect a[href]').on('click', function(event){

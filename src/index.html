@@ -26,7 +26,6 @@
           <a href="#signup">Sign-Up</a>
           <a href="#login">Login</a>
           <!-- <a href="#logout" ng-controller="LogoutCtrl" ng-submit="submit()">Logout</a> -->
-
         </div><!--search bar-->
         <section id="login" class="menu login"> <!-- LOGIN MENU -->
           <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
@@ -34,7 +33,7 @@
             <input ng-model="user.email" type="email" placeholder="you@email.com"></input>
             <h4>Password</h4>
             <input ng-model="user.password" type="password" placeholder="****"></input>
-            <button class="submit" type="submit">Log in</button>
+            <button class="submit login" type="submit">Log in</button>
           </form>
           <div class="redirect">
             <p class="account-query">Don't have an account?</p>
@@ -59,9 +58,7 @@
         <!-- <a href="#question">HERE</a> -->
       </header><!--END header-->
       <main class="container">
-        <section class="list col-2-3" ng-controller="questionList">
-          <ng-view />
-        </section> <!-- .list template-->
+        <ng-view />
       </main> <!-- .container-->
       <!-- bower:js -->
       <script src="/bower_components/jquery/dist/jquery.js"></script>
