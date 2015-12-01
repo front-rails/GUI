@@ -37,14 +37,16 @@
     };
   })//CONTROLLER FOR SIGNUP
 
-  .controller("questionAsker", function($scope, $http){ //CONTROLLER FOR submitting answer
+  .controller("questionAsker", function($scope, $http, $rootScope){ //CONTROLLER FOR submitting answer
+      console.log($rootScope.id);
+
     $scope.question = {
       query: '',
       description: '',
-      user_id: 'user_id'
+      user_id: '$rootScope.id'
     }
-    $scope.submitQuestion = function(id) {
-      user_id = $;
+    $scope.submitQuestion = function() {
+      console.log($rootScope.id);
       $http.post('https://stackundertow.herokuapp.com/questions', $scope.question)
         .then(function(){
           $scope.question = {
@@ -55,7 +57,7 @@
   })//CONTROLLER FOR submitting question
 
   .controller("OfferAnswer", function($scope, $http, $routeParams, $rootScope){ //CONTROLLER FOR submitting answer
-      var id = $routeParams.id;
+      var id = parseInt($routeParams.id, 10);
       var username = $routeParams.username;
       $scope.username = $routeParams.username;
       $scope.id = $routeParams.id;
@@ -66,14 +68,16 @@
           $rootScope.description = response.data.description;
       })
 
-    $scope.answers =     {user_id: 6, question_id: 1, description: "This is my answer from user 6 to question 1, right?"
+
+    $rootScope.submitAnswer = function(description) {
+    $rootScope.answers =  {user_id: $rootScope.id, auth_token: $rootScope.token, question_id: id, description: description
     }
-    $scope.submit = function() {
-      $http.post('https://stackundertow.herokuapp.com/answers', $scope.answers);
+      console.log($rootScope.answers)
+      $http.post('https://stackundertow.herokuapp.com/answers', $rootScope.answers);
     };
   })//CONTROLLER FOR submitting answer
 
-  .controller('loginCtrl', function($scope, $http, $window){//CONTROLLER FOR LOGIN
+  .controller('loginCtrl', function($scope, $http, $window, $rootScope){//CONTROLLER FOR LOGIN
     $scope.user = {
       email: '',
       password: ''
@@ -86,6 +90,9 @@
             email: '',
             password: ''
           }
+          $rootScope.name = data.name;
+          $rootScope.id = data.id;
+          $rootScope.token = data.auth_token;
         })
       .error(function (data, status, headers, config) {
         alert("Error: Invalid user or password");
