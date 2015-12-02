@@ -38,18 +38,17 @@
   })//CONTROLLER FOR SIGNUP
 
   .controller("questionAsker", function($scope, $http, $rootScope){ //CONTROLLER FOR submitting answer
-      console.log($rootScope.id);
 
-    $scope.question = {
-      query: '',
-      description: '',
-      user_id: '$rootScope.id'
-    }
-    $scope.submitQuestion = function() {
-      console.log($rootScope.id);
-      $http.post('https://stackundertow.herokuapp.com/questions', $scope.question)
+    $rootScope.submitQuestion = function(puzzle, detail) {
+      $rootScope.question = {
+        query: puzzle,
+        description: detail,
+        user_id: $rootScope.id
+      }
+      $http.post('https://stackundertow.herokuapp.com/questions', $rootScope.question)
         .then(function(){
           $scope.question = {
+            query: '',
             description: ''
           }
         })
@@ -70,7 +69,7 @@
 
 
     $rootScope.submitAnswer = function(description) {
-    $rootScope.answers =  {user_id: $rootScope.id, auth_token: $rootScope.token, question_id: id, description: description
+    $rootScope.answers =  {user_id: $rootScope.id, question_id: id, description: description
     }
       console.log($rootScope.answers)
       $http.post('https://stackundertow.herokuapp.com/answers', $rootScope.answers);
