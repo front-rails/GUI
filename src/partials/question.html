@@ -4,10 +4,9 @@
   <ul>
     <li ng-repeat="answer in question.answers">
       <div>
-        <h2>{{answer.votes_quality}}</h2>
-        <p>Votes</p>
+        <p>Answer: {{answer.description}} </p>
+        <p>Value of Answer: {{answer.votes_quality}}</p>
       </div>
-      <p>{{answer.description}}</p>
     </li>
   </ul>
 </div> <!--END Question Page-->

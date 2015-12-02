@@ -68,11 +68,18 @@
       })
 
 
-    $rootScope.submitAnswer = function(description) {
-    $rootScope.answers =  {user_id: $rootScope.id, question_id: id, description: description
-    }
-      console.log($rootScope.answers)
-      $http.post('https://stackundertow.herokuapp.com/answers', $rootScope.answers);
+    $rootScope.submitAnswer = function(deets) {
+      $rootScope.answers =  {
+        user_id: $rootScope.id,
+        question_id: id,
+        description: deets
+      }
+      $http.post('https://stackundertow.herokuapp.com/answers', $rootScope.answers)
+      .then(function(){
+        $scope.answers = {
+          description: ''
+        }
+      })
     };
   })//CONTROLLER FOR submitting answer
 
