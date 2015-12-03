@@ -5,7 +5,11 @@
     <li ng-repeat="answer in question.answers">
       <div class="answer-div">
         <p id="answer-description">Answer: {{answer.description}} </p>
-        <p id="answer-votes">{{answer.votes_quality}}</p>
+        <div class="votes">
+          <a href="#" class="arrows"><i class="fa fa-arrow-circle-up"></i></a>
+            <p id="answer-votes">{{answer.votes_quality}}</p>
+          <a href="#" class="arrows"><i class="fa fa-arrow-circle-down"></i></a>
+        </div>
       </div>
     </li>
   </ul>
