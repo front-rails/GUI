@@ -1,12 +1,12 @@
-<section class="list col-2-3" ng-controller="questionList">
-  <div class="homepage col-2-3"> <!--Homepage-->
+<section class="top-questions col-2-3" ng-controller="questionList">
+  <div class="homepage col-2-3">  <!--Homepage-->
     <h2 class="tester">Top Questions</h2>
     <form class="search">
       <input class="search-bar" placeholder="  search" ng-model="query"></input>
     </form><!--search bar-->
     <ul>
       <li ng-repeat="question in questions | filter:query"> <!-- SEARCH BAR FILTER-->
-        <div >
+        <div class="question-div" >
           <h3>{{question.votes_quality}}</h3>
           <p>Votes</p>
         </div>
