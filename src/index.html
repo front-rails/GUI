@@ -20,13 +20,11 @@
     </head>
     <body  ng-app="Front-Rails">
       <header>
-        <a href="#/question">Question Page Here</a>
         <a href="#/" class="logo"><span>Stack Undertow</span></a>
         <div class="user-buttons">
           <a href="#signup">Sign-Up</a>
           <a href="#login">Login</a>
           <!-- <a href="#logout" ng-controller="LogoutCtrl" ng-submit="submit()">Logout</a> -->
-
         </div><!--search bar-->
         <section id="login" class="menu login"> <!-- LOGIN MENU -->
           <form class="login-signup" ng-controller='loginCtrl' ng-submit="submit()">
@@ -34,7 +32,7 @@
             <input ng-model="user.email" type="email" placeholder="you@email.com"></input>
             <h4>Password</h4>
             <input ng-model="user.password" type="password" placeholder="****"></input>
-            <button class="submit" type="submit">Log in</button>
+            <button class="submit login" type="submit">Log in</button>
           </form>
           <div class="redirect">
             <p class="account-query">Don't have an account?</p>
@@ -59,20 +57,7 @@
         <!-- <a href="#question">HERE</a> -->
       </header><!--END header-->
       <main class="container">
-        <section class="list col-2-3" ng-controller="questionList">
-          <ng-view />
-        </section> <!-- .list template-->
-        <aside class="q-a col-1-3">
-         <form ng-controller="OfferAnswer" ng-submit="submit()">
-           <!-- <h3 class="question">Questions</h3> -->
-           <h3 class="answer">Answer</h3>
-           <div class="q-a-text" >
-             <!-- <textarea class="question" placeholder="Write your question here"></textarea> -->
-             <textarea class="answer" placeholder="   Write your answer here..." ng-model="answer.description"></textarea>
-             <button class="q-a-submit" type="submit">Submit</button>
-           </div>
-         </form>
-       </aside> <!--END OF QA MENU-->
+        <ng-view />
       </main> <!-- .container-->
       <!-- bower:js -->
       <script src="/bower_components/jquery/dist/jquery.js"></script>

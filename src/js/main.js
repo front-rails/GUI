@@ -9,7 +9,7 @@
       templateUrl: 'partials/top-questions.html',  // controller: 'questionList'
     })
 
-    .when('/question', {
+    .when('/question/:id', {
       templateUrl: 'partials/question.html',  // controller: 'questionPage'
     })
   }) //END $routeProvider
@@ -37,35 +37,74 @@
     };
   })//CONTROLLER FOR SIGNUP
 
-  .controller("OfferAnswer", function($scope, $http){ //CONTROLLER FOR submitting answer
-    $scope.answers =     {user_id: 6, question_id: 1, description: "This is my answer from user 6 to question 1, right?"
-    }
-    $scope.submit = function() {
-      $http.post('https://stackundertow.herokuapp.com/answers', $scope.answers);
-      console.log($scope.answers);
+  .controller("questionAsker", function($scope, $http, $rootScope){ //CONTROLLER FOR submitting answer
+
+    $rootScope.submitQuestion = function(puzzle, detail) {
+      $rootScope.question = {
+        query: puzzle,
+        description: detail,
+        user_id: $rootScope.id
+      }
+      $http.post('https://stackundertow.herokuapp.com/questions', $rootScope.question)
+        .then(function(){
+          $scope.question = {
+            query: '',
+            description: ''
+          }
+        })
+    };
+  })//CONTROLLER FOR submitting question
+
+  .controller("OfferAnswer", function($scope, $http, $routeParams, $rootScope){ //CONTROLLER FOR submitting answer
+      var id = parseInt($routeParams.id, 10);
+      var username = $routeParams.username;
+      $scope.username = $routeParams.username;
+      $scope.id = $routeParams.id;
+      $http.get('https://stackundertow.herokuapp.com/questions/' + id + "/")
+        .then(function(response){
+          $rootScope.question = response.data;
+          $rootScope.query = response.data.query;
+          $rootScope.description = response.data.description;
+      })
+
+
+    $rootScope.submitAnswer = function(deets) {
+      $rootScope.answers =  {
+        user_id: $rootScope.id,
+        question_id: id,
+        description: deets
+      }
+      $http.post('https://stackundertow.herokuapp.com/answers', $rootScope.answers)
+      .then(function(){
+        $scope.answers = {
+          description: ''
+        }
+      })
     };
   })//CONTROLLER FOR submitting answer
 
-  .controller('loginCtrl', function($scope, $http){//CONTROLLER FOR LOGIN
+  .controller('loginCtrl', function($scope, $http, $window, $rootScope){//CONTROLLER FOR LOGIN
     $scope.user = {
       email: '',
-      password: '',
+      password: ''
     }
     $scope.submit= function(){
       $http.post('https://stackundertow.herokuapp.com/sessions', $scope.user)
-      console.log($scope.user);
-      // this.login = {};
+        .success(function (data, status, headers, config) {
+          $window.sessionStorage.auth_token = data.auth_token;
+          $scope.user = {
+            email: '',
+            password: ''
+          }
+          $rootScope.name = data.name;
+          $rootScope.id = data.id;
+          $rootScope.token = data.auth_token;
+        })
+      .error(function (data, status, headers, config) {
+        alert("Error: Invalid user or password");
+      });
     }
   })//CONTROLLER FOR LOGIN
-
-  // .controller("submitQuestion", function($scope, $http){ //CONTROLLER FOR submitting answer
-  //   $scope.question =     {user_id: 6, question_id: 1, description: "This is a new question"
-  //   }
-  //   $scope.submit = function() {
-  //     $http.post('https://stackundertow.herokuapp.com/question', $scope.answers);
-  //     console.log($scope.answers);
-  //   };
-  // })//CONTROLLER FOR submitting questions
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {
@@ -83,19 +122,20 @@
 })(); //END OF IFFE
 
 
-
-
 /* Signup and Login menu drop down*/
 
 
 ;(function(){
-
 
   $('.user-buttons a[href]').on('click', function(event){
     event.preventDefault();
       $(this).add(this.hash)
       .toggleClass('active')
       .siblings().removeClass('active');
+  });
+
+  $('.submit').on('click', function(){
+    $('#login').removeClass('active');
   });
 
   $('.redirect a[href]').on('click', function(event){
