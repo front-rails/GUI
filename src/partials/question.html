@@ -1,11 +1,11 @@
 <section class="question col-2-3"  ng-controller="OfferAnswer" > <!--Question Page-->
   <h2>{{question.query}}</h2>
-  <p id="q-description">{{question.description}}<p>
-  <ul class="list">
+  <p id="q-description">{{question.description}}</p>
+  <ul class="answer-list">
     <li ng-repeat="answer in question.answers">
       <div class="answer-div">
-        <p>Answer: {{answer.description}} </p>
-        <p>Value of Answer: {{answer.votes_quality}}</p>
+        <p id="answer-description">Answer: {{answer.description}} </p>
+        <p id="answer-votes">{{answer.votes_quality}}</p>
       </div>
     </li>
   </ul>
