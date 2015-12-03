@@ -108,7 +108,7 @@
   })//CONTROLLER FOR LOGIN
 
   .controller('vote', function($scope, $http) {
-    var id = $scope.answer_id;
+    var id = this.answer_id;
 
     $scope.upVote = function() {
       // console.log("UP VOTE");
