@@ -60,20 +60,24 @@
           float: left;
           #answer-description {
             display:block;
-            width: 50%;
+            width: 60%;
             float:right;
           }
-          #answer-votes {
-            display:block;
-            width: 50%;
-            float:right;
-            &::before {
-              content: '\f0aa';
-              font-family: FontAwesome;
-            }
-            &::after {
-              content: '\f0ab';
-              font-family: FontAwesome;
+          .votes {
+            width: 40%;
+            font-size: 16pt;
+            margin-top: 16px;
+
+            #answer-votes {
+              display:inline;
+              margin-right: 8px;
+              margin-left: 8px;
+
+            }//#ANSWER-VOTES
+            .arrows {
+              display: inline;
+              color: #4e1bb4;
+              width: 10%;
             }
           }
 
