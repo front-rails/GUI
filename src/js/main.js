@@ -11,6 +11,7 @@
 
     .when('/question/:id', {
       templateUrl: 'partials/question.html',  // controller: 'questionPage'
+      controller: 'vote',
     })
   }) //END $routeProvider
 
@@ -105,6 +106,17 @@
       });
     }
   })//CONTROLLER FOR LOGIN
+
+  .controller('vote', function($scope, $http) {
+    $scope.upVote = function() {
+      console.log("UP VOTE");
+    };
+
+    $scope.downVote = function() {
+      console.log("DOWN VOTE");
+    };
+
+  })//CONTROLLER FOR VOTING
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {
