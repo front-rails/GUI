@@ -1,19 +1,20 @@
-<div class="question col-2-3"  ng-controller="OfferAnswer" > <!--Question Page-->
+<section class="question col-2-3"  ng-controller="OfferAnswer" > <!--Question Page-->
   <h2>{{question.query}}</h2>
-  <p>{{question.description}}<p>
-  <ul>
+  <p id="q-description">{{question.description}}<p>
+  <ul class="list">
     <li ng-repeat="answer in question.answers">
-      <div>
+      <div class="answer-div">
         <p>Answer: {{answer.description}} </p>
         <p>Value of Answer: {{answer.votes_quality}}</p>
       </div>
     </li>
   </ul>
-</div> <!--END Question Page-->
+</section> <!--END Question Page-->
+
   <aside class="q-a col-1-3">
    <form ng-submit="submitAnswer(answer.description)">
      <h3 class="answer">Answer</h3>
-     <div class="q-a-text" >
+     <div class="q-a-text">
        <textarea class="answer" placeholder="   Write your answer here..." ng-model="answer.description"></textarea>
        <button class="q-a-submit" type="submit">Submit</button>
      </div>
