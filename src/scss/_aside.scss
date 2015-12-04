@@ -3,7 +3,7 @@
   text-align: center;
   @extend .clearfix;
   // float: right;
-  // margin-right: -5%;
+  margin-top: 2ex;
 
   h3 {
     color: #4e1bb4;
@@ -14,8 +14,9 @@
   }
 
   .q-a-text {               //div containing text-area
-    padding-bottom: 20%;
-    padding-top: 20%;
+
+    padding-bottom: 2ex;
+    padding-top: 2ex;
 
     .question {       //Question textarea
       box-sizing: border-box;

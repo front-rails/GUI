@@ -1,6 +1,10 @@
-<section class="question col-2-3"  ng-controller="OfferAnswer" > <!--Question Page-->
+<main ng-controller="OfferAnswer">
+<section class="question col-2-3"> <!--Question Page-->
   <h2>{{question.query}}</h2>
+    <div class="add-answer"><a href="" class="add-a">Offer Answer</a></div>
+
   <p id="q-description">{{question.description}}</p>
+
   <ul class="answer-list">
     <li ng-repeat="answer in question.answers">
       <div class="answer-div">
@@ -15,7 +19,7 @@
   </ul>
 </section> <!--END Question Page-->
 
-  <aside class="q-a col-1-3">
+  <aside class="q-a col-1-3" id="add-a">
    <form ng-submit="submitAnswer(answer.description)">
      <h3 class="answer">Answer</h3>
      <div class="q-a-text">
@@ -25,3 +29,4 @@
    </form>
  </aside>
 <!--END OF QA MENU-->
+</main>
