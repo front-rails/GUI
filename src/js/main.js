@@ -108,17 +108,15 @@
   })//CONTROLLER FOR LOGIN
 
   .controller('vote', function($scope, $http) {
-    var id = this.answer_id;
 
     $scope.upVote = function() {
-      // console.log("UP VOTE");
+    var id = $scope.answer.id;
       $http.patch('https://stackundertow.herokuapp.com/answers/'+ id +'/upvote')
     };
 
     $scope.downVote = function() {
-      // console.log("DOWN VOTE");
+    var id = $scope.answer.id;
       $http.patch('https://stackundertow.herokuapp.com/answers/'+ id +'/downvote')
-
     };
 
   })//CONTROLLER FOR VOTING
