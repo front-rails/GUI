@@ -1,13 +1,18 @@
 header {
   display: block;
-  height: 10ex;
+  height: 8ex;
   border-bottom: 1px solid #f1f1f1;
   background-color: #fbfbfb;
   .logo {
-  position: absolute;
-  top: 1ex;
-  left: 1em;
-  font-size: 2em;
+  box-sizing: border-box;
+  width: 75%;
+  display: block;
+  float: left;
+  // position: absolute;
+  // top: 1ex;
+  // left: 1em;
+  padding: 1.5ex 0 0 1em;
+  font-size: 1.7em;
   color:#4e1bb4;
   text-decoration: none;
   font-weight: bold;
@@ -19,19 +24,25 @@ header {
   }
 } //.logo
   .user-buttons {
+    box-sizing: border-box;
     display: block;
-    width: auto;
-    position: absolute;
-    top: 1.5ex;
-    right: 2em;
+    margin-top: 2ex;
+    width: 25%;
+    float: right;
+    padding: 2ex 0.5em 0 1em;
+    // top: 1.5ex;
+    // right: 2em;
     a {
-      display: inline-block;
-      margin-right: 2.5em;
-      padding: 2ex 2em;
+      // display: inline-block;
+      // margin-top: 2ex;
+      text-align: right;
       text-decoration: none;
-      background-color: #4e1bb4;
-      color: #fff;
-      border-radius: 5px;
+      color: #4e1bb4;
+      // color: #fff;
+      // border-radius: 5px;
+      &:first-of-type {
+        display: none;
+      }
     }
   } //.search
   .menu {

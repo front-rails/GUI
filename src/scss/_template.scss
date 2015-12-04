@@ -1,16 +1,33 @@
 .top-questions { //Section for top-questions
+  display: block;
+  clear: both;
+  width: 100%;
+
   .homepage {
+    width: 100%;
     h2 {
       text-align:center;
       color:#4e1bb4;
       font-weight: bold;
       vertical-align: middle;
     }
+    .search {
+      width: 50%;
+      margin: 0;
+    }
+    .add-question {
+      width: 50%;
+      float: right;
+      text-align: right;
+      margin-top: -2.5ex;
+      a {
+        text-decoration: none;
+        color: #4e1bb4;
+      }
+    }
     ul { //TOP QUESTIONS LIST
       list-style-type: none;
       padding-left: 0;
-      // border: 2px solid green;
-
       li {
         border-top:1px solid #f1f1f1;
         height: 15ex;
@@ -22,7 +39,6 @@
       }//LI
     } //UL
 
-
       h4 {
         width: 50%;
         float:left;
@@ -30,7 +46,14 @@
   } //.homepage
 } //.top-questions
 
-
+.q-a {
+  display: none;
+  &.active {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
   .question {           //QUESTION.html PARTIAL
     h2 {
       display: block;
@@ -48,7 +71,6 @@
     .answer-list { //QUESTIONS
       list-style-type: none;
       padding-left: 0;
-      // border: 2px solid blue;
 
       li {
         border-top:1px solid #f1f1f1;

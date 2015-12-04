@@ -1,35 +1,33 @@
 .menu {                   //container for login menu
   border: 1px solid #f1f1f1;
-  width: 18em;
-  margin: 0 auto;
+  width: auto;
+  margin: 0;
   position: absolute;
-  top: 10ex;
-  right: 4em;
+  top: 8ex;
+  right: 0;
   @extend.clearfix ;
   background-color: #fbfbfb;
   z-index: 1;
-
-  .login-signup {              //FORM BODY
-    float: left;
-    margin: 10px;
+  .login-signup {      //FORM BODY
     display: block;
-
+    float: left;
+    margin: 10px 2em;
     h4 {
       margin-bottom: 5px;
     }
-
-    .submit  {                 //submit button
+    .submit  {       //submit button
+      width: 50%;
+      margin-left: 25%;
+      margin-right: 25%;
       background-color: #4e1bb4;
       color: #fff;
       border-radius: 5px;
-      padding: 0 30px;
+      padding: 0 2em;
       border: none;
       font-size: 12pt;
       margin: 20px 1px;
     }
   } // END OF LOGIN FORM
-
-
 
   .redirect {            //div for redirect box
     border-top: 1px solid #f1f1f1;
