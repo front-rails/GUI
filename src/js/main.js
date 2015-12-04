@@ -11,6 +11,7 @@
 
     .when('/question/:id', {
       templateUrl: 'partials/question.html',  // controller: 'questionPage'
+      controller: 'vote',
     })
   }) //END $routeProvider
 
@@ -105,6 +106,22 @@
       });
     }
   })//CONTROLLER FOR LOGIN
+
+  .controller('vote', function($scope, $http) {
+    var id = this.answer_id;
+
+    $scope.upVote = function() {
+      // console.log("UP VOTE");
+      $http.patch('https://stackundertow.herokuapp.com/answers/'+ id +'/upvote')
+    };
+
+    $scope.downVote = function() {
+      // console.log("DOWN VOTE");
+      $http.patch('https://stackundertow.herokuapp.com/answers/'+ id +'/downvote')
+
+    };
+
+  })//CONTROLLER FOR VOTING
 
 // .controller('logoutCtrl', function($scope, $http){//CONTROLLER FOR LOGOUT
 //     $scope.user = {

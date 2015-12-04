@@ -5,10 +5,10 @@
     <li ng-repeat="answer in question.answers">
       <div class="answer-div">
         <p id="answer-description">Answer: {{answer.description}} </p>
-        <div class="votes">
-          <a href="#" class="arrows"><i class="fa fa-arrow-circle-up"></i></a>
+        <div class="votes" ng-controller="vote">
+          <a href="" class="arrows" ng-click="upVote()"><i class="fa fa-arrow-circle-up" id="up"></i></a>
             <p id="answer-votes">{{answer.votes_quality}}</p>
-          <a href="#" class="arrows"><i class="fa fa-arrow-circle-down"></i></a>
+          <a href="" class="arrows" ng-click="downVote()"><i class="fa fa-arrow-circle-down" id="down"></i></a>
         </div>
       </div>
     </li>
