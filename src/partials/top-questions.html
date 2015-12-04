@@ -1,11 +1,16 @@
-<section class="top-questions col-2-3" ng-controller="questionList">
+<main ng-controller="questionList">
+<section class="top-questions col-2-3" >
   <div class="homepage">  <!--Homepage-->
     <h2 class="tester">Top Questions</h2>
     <form class="search">
       <input class="search-bar" placeholder="  search" ng-model="query"></input>
     </form><!--search bar-->
+    <div class="add-question"><a href="" class="add-q">Add Question</a></div>
     <ul>
       <li ng-repeat="question in questions | filter:query"> <!-- SEARCH BAR FILTER-->
+        <a ng-href="#question/{{question.id}}">
+          <h4>{{question.query}}</h4>
+        </a>
         <div class="question-div" >
           <h3>{{question.votes_quality}}</h3>
           <p>Votes</p>
@@ -14,14 +19,11 @@
           <h3>{{question.answers.length}}</h3>
           <p>Answers</p>
         </div>
-        <a ng-href="#question/{{question.id}}">
-          <h4>{{question.query}}</h4>
-        </a>
       </li>
     </ul>
   </div><!--END homepage-->
 </section> <!-- .list template-->
-<aside class="q-a col-1-3">
+<aside id="add-q" class="q-a col-1-3">
  <form ng-submit="submitQuestion(question.query, question.description)">
    <h3 class="Question">Question</h3>
    <div class="q-a-text" >
@@ -31,3 +33,4 @@
    </div>
  </form>
 </aside> <!--END OF QA MENU-->
+</main>

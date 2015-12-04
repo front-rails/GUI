@@ -74,6 +74,10 @@
           }
         })
     };
+
+  $('.add-q').on('click', function(){
+      $('#add-q').toggleClass('active')
+  });
   })//CONTROLLER FOR POPULATING TOP QUESTIONS
 
   .controller("OfferAnswer", function($scope, $http, $routeParams, $rootScope){ //CONTROLLER FOR submitting answer
@@ -140,6 +144,8 @@
 
 
 ;(function(){
+
+
 
   $('.user-buttons a[href]').on('click', function(event){
     event.preventDefault();
