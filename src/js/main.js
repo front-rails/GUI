@@ -105,6 +105,10 @@
         }
       })
     };
+
+  $('.add-a').on('click', function(){
+      $('#add-a').toggleClass('active')
+  });
   })//CONTROLLER FOR submitting answer
 
   .controller('vote', function($scope, $http) {

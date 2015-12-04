@@ -50,19 +50,31 @@
   display: none;
   &.active {
     display: block;
+    position: absolute;
+    top: 20.5ex;
     width: 100%;
     float: left;
   }
 }
   .question {           //QUESTION.html PARTIAL
+    width: 100%;
     h2 {
       display: block;
       text-align:left;
-      width:90%;
+      width:70%;
       margin-bottom: 0;
       float: left;
       color:#4e1bb4;
     }
+.add-answer {
+  width: 30%;
+  float: right;
+  padding-top: 4ex;
+  a[href] {
+    text-decoration: none;
+    color: #4e1bb4;
+  }
+}
     #q-description {
       width: 100%;
       display: block;
