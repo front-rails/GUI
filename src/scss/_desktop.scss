@@ -1,0 +1,242 @@
+@media (min-width: 60em) {
+
+.top-questions { //Section for top-questions
+  .homepage {
+    h2 {
+      text-align:center;
+      color:#4e1bb4;
+      font-weight: bold;
+      vertical-align: middle;
+    }
+    ul { //TOP QUESTIONS LIST
+      list-style-type: none;
+      padding-left: 0;
+      // border: 2px solid green;
+
+      li {
+        border-top:1px solid #f1f1f1;
+        height: 15ex;
+        color: #717072;
+        .question-div {
+          width:20%;
+          float: left;
+        }
+      }//LI
+    } //UL
+
+
+      h4 {
+        width: 50%;
+        float:left;
+      }
+  } //.homepage
+} //.top-questions
+
+
+  .question {           //QUESTION.html PARTIAL
+    h2 {
+      display: block;
+      text-align:left;
+      width:90%;
+      margin-bottom: 0;
+      float: left;
+      color:#4e1bb4;
+    }
+    #q-description {
+      width: 100%;
+      display: block;
+      float: left;
+    }
+    .answer-list { //QUESTIONS
+      list-style-type: none;
+      padding-left: 0;
+      // border: 2px solid blue;
+
+      li {
+        border-top:1px solid #f1f1f1;
+        height: 20ex;
+        width: 100%;
+        color: #717072;
+        .answer-div {
+          width:100%;
+          float: left;
+          #answer-description {
+            display:block;
+            width: 60%;
+            float:right;
+          }
+          .votes {
+            width: 40%;
+            font-size: 16pt;
+            margin-top: 16px;
+
+            #answer-votes {
+              display:inline;
+              margin-right: 8px;
+              margin-left: 8px;
+
+            }//#ANSWER-VOTES
+            .arrows {
+              display: inline;
+              color: #4e1bb4;
+              width: 10%;
+            }
+          }
+
+        } //ANSWER-DIV
+      }//LI
+    } //UL
+  }//.question
+
+
+
+.q-a {                          //aside container
+  background-color: #fbfbfb;
+  text-align: center;
+  float: right;
+  margin-right: -5%;
+
+  h3 {
+    color: #4e1bb4;
+    border-bottom: 1px solid #f1f1f1;
+    font-size: 20pt;
+    font-weight: bold;
+    padding-bottom: 20px;
+  }
+
+  .q-a-text {               //div containing text-area
+    padding-bottom: 20%;
+    padding-top: 20%;
+
+
+    .question {       //Question textarea
+      height: 150px;
+      width: 350px;
+      border: 1px solid #f1f1f1;
+      border-radius: 2px;
+    }
+
+    .answer {         //Answer textarea
+      height: 150px;
+      width: 350px;
+      border: 1px solid #f1f1f1;
+      border-radius: 2px;
+
+    }
+    .q-a-submit {         //submit button
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      background-color: #4e1bb4;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0 30px;
+      font-size: 12pt;
+
+    }
+  } //END OF DIV
+} //END OF ASIDE
+
+
+header {
+  display: block;
+  height: 10ex;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: #fbfbfb;
+  .logo {
+  position: absolute;
+  top: 1ex;
+  left: 1em;
+  font-size: 2em;
+  color:#4e1bb4;
+  text-decoration: none;
+  font-weight: bold;
+
+  span::before{
+    content: "\f16c";
+    font-family: FontAwesome;
+    color: #4e1bb4;
+  }
+} //.logo
+  .user-buttons {
+    display: block;
+    width: auto;
+    position: absolute;
+    top: 1.5ex;
+    right: 2em;
+    a {
+      display: inline-block;
+      margin-right: 2.5em;
+      padding: 2ex 2em;
+      text-decoration: none;
+      background-color: #4e1bb4;
+      color: #fff;
+      border-radius: 5px;
+    }
+  } //.search
+  .menu {
+    display: none;
+    &.active {
+      display: block;
+    }
+  } //.login-menu
+} // header
+
+
+
+.menu {                   //container for login menu
+  border: 1px solid #f1f1f1;
+  width: 18em;
+  margin: 0 auto;
+  position: absolute;
+  top: 10ex;
+  right: 4em;
+  background-color: #fbfbfb;
+  z-index: 1;
+
+  .login-signup {              //FORM BODY
+    float: left;
+    margin: 10px;
+    display: block;
+
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    .submit  {                 //submit button
+      background-color: #4e1bb4;
+      color: #fff;
+      border-radius: 5px;
+      padding: 0 30px;
+      border: none;
+      font-size: 12pt;
+      margin: 20px 1px;
+    }
+  } // END OF LOGIN FORM
+
+
+
+  .redirect {            //div for redirect box
+    border-top: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    float: left;
+    width: 100%;
+    background-color: #fbfbfb;
+
+    .account-query {              //<p>
+      display: inline-block;
+      margin-left: 10px;
+      margin-right: 5px;
+    }
+
+    a {                           //TODO: SPECIFY
+      display: inline-block;
+    }
+  }
+} //END .login-signup
+
+
+
+
+}//END media query
